@@ -1,0 +1,160 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom right,#000,#323232);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Main container */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Section */
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Background container */
+.background-shape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 35px;
+  width: 90vw;
+  height: 90vh;
+  padding: 20px;
+}
+
+/* Side Image */
+.side-image {
+  height: 100%;
+  width: 35%;
+  border-radius: 24px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f2f4eb;
+  overflow: hidden;
+}
+
+.side-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Keypad container */
+.id-container {
+  background: #f2f4eb;
+  padding: 20px;
+  border-radius: 24px;
+  height: 100%;
+  width: 60%;
+}
+.input-field {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 0px solid #8a8a8a; /* Light gray border */
+  border-radius: 17px; /* Slightly rounded corners */
+  background-color: #f2f4eb;/* Light background */
+  color: #333; /* Dark text */
+  text-align: center; /* Center the text */
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Keypad grid layout */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+  height: 90%;
+  width: 100%;
+  place-items: center; 
+}
+
+/* Individual keys */
+.key {
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  width: 10vw; /* Keep width and height the same */
+  height: 10vh;
+  font-size: 20px;
+  border: 0px solid #8a8a8a;
+  border-radius: 30px; /* Fully rounded corners for a circle */
+  background: #f7f7f4;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+
+/* Hover effect for buttons */
+.key:hover {
+  background: #bebdaa;
+}
+
+
+@media  (min-aspect-ratio: 16/9) and (orientation: landscape) {
+  .keypad{
+    grid-template-columns: repeat(4, 1fr);
+    height: 85%;
+  }
+  .id-container{
+    width: 70%;
+  }
+  .side-image {
+    width: 25%;
+  }
+
+}
+@media (orientation: portrait)and (min-width:441px){
+  .side-image {
+    display: none;
+  }
+  .id-container{
+    width: 100%;
+  }
+  .key{
+    width: 14vw;
+  }
+  .input-field {
+    height: 10%;
+  }
+
+}
+@media (orientation: portrait)and (max-width:440.9px) {
+  .background-shape{
+    flex-direction: column;
+  }
+  .id-container{
+    height: 60%;
+    width: 100%;
+  }
+  .side-image {
+    width:100%;
+    height: 38%;
+    }
+  .key{
+    width: 16vw;
+    height: 7vh;
+  }
+}
