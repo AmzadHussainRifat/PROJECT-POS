@@ -4,6 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+html{
+    height: -webkit-fill-available;
+}
 
 /* Body */
 body {
@@ -16,6 +19,7 @@ body {
     min-width: 100vw;
     text-align: center;
     overflow: hidden;
+    height: -webkit-fill-available;
 }
 
 /* Main container */
